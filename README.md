@@ -29,6 +29,12 @@ animegan2-pytorch_lightning/    # Project root directory
 └── weights/                    # Pre-trained model weights
 ```
 
+## Data
+### FFHQ Dataset
+https://github.com/NVlabs/ffhq-dataset
+### Anime Dataset
+https://github.com/kangnam7654/dfhq
+
 ## Installation
 
 ```bash
@@ -38,9 +44,7 @@ cd animegan2
 ```
 
 ## Usage
-
 ### Training
-
 #### Step 1: Prepare edge smoothing data
 ```bash
 uv run animegan2/utils/edge_smooth.py --root_dir {ANIME_IMAGE_DIRECTORY} --out_dir {EDGE_SMOOTH_SAVE_DIRECTORY} --image_size {EDGE_SMOOTH_IMAGE_SIZE}
