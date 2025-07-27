@@ -56,7 +56,7 @@ class AnimeganPipeline(pl.LightningModule):
         else:
             # After Pre-training
             photo, anime, gray, smooth = batch  # p, a, x, y
-            g_opt, d_opt = self.configure_optimizers()
+            g_opt, d_opt = self.optimizers()
 
             # | Discriminator |
             self.generator.requires_grad_(False)
@@ -231,7 +231,7 @@ class AnimeganPipeline(pl.LightningModule):
     def _pre_training(self, batch):
         self.generator.requires_grad_(True)
         self.discriminator.requires_grad_(False)
-        g_opt, _ = self.configure_optimizers()
+        g_opt, _ = self.optimizers()
 
         photo, _, _, _ = batch
         fake = self.generator(photo)

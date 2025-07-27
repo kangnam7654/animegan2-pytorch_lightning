@@ -64,7 +64,7 @@ class AnimeDataSet(Dataset):
         return image, image_gray
 
     def load_anime_smooth(self, index: int) -> torch.Tensor:
-        fpath = self.anime_files[index]
+        fpath = self.smooth_files[index]
 
         image = Image.open(fpath).convert("L")  # Gray Scale
         image = self._transform(image)
